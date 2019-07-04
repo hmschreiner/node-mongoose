@@ -1,0 +1,17 @@
+{
+  "name": "node-mongodb",
+  "version": "1.0.0",
+  "description": "Exemplo de API em Node.js usando MongoDB e Mongoose",
+  "scripts": {
+    "start": "npx babel-node src"
+  },
+  "dependencies": {
+    "express": "^4.17.0",
+    "mongoose": "^5.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
+  }
+}
