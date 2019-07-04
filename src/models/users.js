@@ -1,13 +1,25 @@
 import Mongoose from 'mongoose'
 
-const UserSchema = new Mongoose.Schema({
+const schema = new Mongoose.Schema({
     firstName: String,
     lastName: String,
-    email: { type: String, required: true },
+    email: {
+        type: String,
+        required: [true, 'Email is required'],
+        unique: true,
+    },
 }, {
     timestamps: { createdAt: true, updatedAt: true },
+    toJSON: { 
+        virtuals: true,
+        transform(doc, ret) {
+            ret.id = ret._id
+            delete ret._id
+          }
+    },
+    versionKey: false,
 })
 
-const UserModel = Mongoose.model('Users', UserSchema)
+const UsersModel = Mongoose.model('Users', schema)
 
-export default UserModel
+export default UsersModel
