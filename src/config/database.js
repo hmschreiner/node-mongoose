@@ -3,10 +3,8 @@ import mongoose from 'mongoose'
 mongoose.Promise = global.Promise
 
 const config = {
-  uri: 'mongodb+srv://cluster0-lwpkc.mongodb.net/test',
+  uri: 'mongodb://localhost:27017/node-mongoose',
   options: {
-    user: 'test',
-    pass: '1!2@3#4$',
     useNewUrlParser: true,
     useFindAndModify: false,
   },
